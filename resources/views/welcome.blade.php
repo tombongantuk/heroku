@@ -83,6 +83,9 @@
                 </div>
 
                 <div class="links">
+                    <a href="{{ url('home') }}">Home</a>
+                    <a href="{{ url('about') }}">About</a>
+                    <a href="{{ url('contact') }}">Contact</a>
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>

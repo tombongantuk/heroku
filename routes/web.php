@@ -18,4 +18,6 @@ Route::get('/','StaticsController@Greetings');
 Route::get('about','StaticsController@About');
 Route::get('home','StaticsController@Home');
 Route::get('contact','StaticsController@Contact');
+Route::post('prosescontact','StaticsController@ProsesContactUs');
+Route::post('iseng','StaticsController@Arr');
 Route::resource('article','articleController');

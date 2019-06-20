@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
    
     <title>@yield('title')</title>
+
     <!--boostrap core CSS-->
-    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-   
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
 <body>
     
@@ -28,7 +29,7 @@
             @yield('text')
         </div>
     </footer>
-    <script src="{{asset('js/jquery-3.2.1.slim.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('js/jquery-3.2.1.slim.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 </body>
 </html>

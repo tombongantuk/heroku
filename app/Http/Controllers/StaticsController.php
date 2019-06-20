@@ -19,6 +19,25 @@ class StaticsController extends Controller
     }
 
     public function Contact(){
-        return view('static.contact');
+        return view('static.iseng');
+    }
+
+    public function ProsesContactUs(Request $request){
+        
+        $response=$request->name;
+        return view('static.contact',compact('response'));
+    }
+    
+    public function Arr(Request $request){
+        $response=$request->name;
+        foreach ($input as $value) {
+            if ($value%2==0){
+                $genap=[$value];
+            }
+            if ($value%2!=0){
+                $ganjil=[$value];
+            }
+        }
+        return view('static.iseng',compact('response')); 
     }
 }

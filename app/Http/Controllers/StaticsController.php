@@ -29,20 +29,20 @@ class StaticsController extends Controller
          //$response=$request->all();
         // return view('static.contact',compact('response'));
 
-        $action= Input::get('action','none');
+        // $action= Input::get('action','none');
 
-        if ($action=='+'){
-            return "+ di pencet";
-        }else if ($action =='-'){
-            return "- di pencet";
-        }else if ($action =='*'){
-            return " * di pencet";
-        }else if ($action =='/'){
-            return "/ di pencet";
-        }else if ($action =='submit'){
-            return view('static.contact');   
-        }else {
-            return "% di pencet";
-        }
+        // if ($action=='+'){
+        //     return "+ di pencet";
+        // }else if ($action =='-'){
+        //     return "- di pencet";
+        // }else if ($action =='*'){
+        //     return " * di pencet";
+        // }else if ($action =='/'){
+        //     return "/ di pencet";
+        // }else if ($action =='submit'){
+        //     return view('static.contact');   
+        // }else {
+        //     return "% di pencet";
+        //}
     }
 }

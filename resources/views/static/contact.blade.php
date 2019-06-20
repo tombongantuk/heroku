@@ -39,22 +39,34 @@
               <!-- Form actions -->
               <div class="form-group">
                 <div class="col-md-12 text-right">
-                  <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                  <button type="submit" value="submit" name="action" class="btn btn-primary btn-lg">Submit</button>
                 </div>
               </div>
             </fieldset>
-            </form>
-          </div>
+          </form>
         </div>
       </div>
-</div>
-
+    </div>
+  </div>
 <div class="row">
+  <form role="form" id="contact-form" class="form-horizontal" action={{ url('prosescontact')}}
+    method="POST">
+    {{csrf_field()}}
+      <input type="text"name="txt1" value="">      
+      <input type="text"name="txt2" value="">
+      <input type="submit" value="+" name="action" class="btn main-btn">
+      <input type="submit" value="-" name="action" class="btn main-btn">
+      <input type="submit" value="*" name="action" class="btn main-btn">
+      <input type="submit" value="/" name="action" class="btn main-btn">
+      <input type="submit" value="%" name="action" class="btn main-btn">
+  </form>
+</div>
+{{-- <div class="row">
 @if (isset($response))
     {{ $response }} <br>
 @endif
 </div>
-<br>
+<br> --}}
 @endsection
 
 @section('text')

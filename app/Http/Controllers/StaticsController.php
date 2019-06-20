@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Request\ContactRequest;
+use Illuminate\Support\Facades\Input;
 
 class StaticsController extends Controller
 {
@@ -19,25 +21,28 @@ class StaticsController extends Controller
     }
 
     public function Contact(){
-        return view('static.iseng');
+        return view('static.contact');
     }
 
     public function ProsesContactUs(Request $request){
         
-        $response=$request->name;
-        return view('static.contact',compact('response'));
-    }
-    
-    public function Arr(Request $request){
-        $response=$request->name;
-        foreach ($input as $value) {
-            if ($value%2==0){
-                $genap=[$value];
-            }
-            if ($value%2!=0){
-                $ganjil=[$value];
-            }
+         //$response=$request->all();
+        // return view('static.contact',compact('response'));
+
+        $action= Input::get('action','none');
+
+        if ($action=='+'){
+            return "+ di pencet";
+        }else if ($action =='-'){
+            return "- di pencet";
+        }else if ($action =='*'){
+            return " * di pencet";
+        }else if ($action =='/'){
+            return "/ di pencet";
+        }else if ($action =='submit'){
+            return view('static.contact');   
+        }else {
+            return "% di pencet";
         }
-        return view('static.iseng',compact('response')); 
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Article;
 
 class articleController extends Controller
 {
@@ -13,7 +14,8 @@ class articleController extends Controller
      */
     public function index()
     {
-        //
+        $article=Article::$request->all();
+        return view('article.index')->with('article',$article);
     }
 
     /**
@@ -23,7 +25,7 @@ class articleController extends Controller
      */
     public function create()
     {
-        //
+        return view('article.create');
     }
 
     /**
@@ -34,7 +36,8 @@ class articleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Article::create($request->all());
+        return redirect()->route('article.index');
     }
 
     /**
@@ -45,7 +48,8 @@ class articleController extends Controller
      */
     public function show($id)
     {
-        //
+        Article::find($id);
+        return view('article.show')->with('article',$article);
     }
 
     /**
@@ -56,7 +60,8 @@ class articleController extends Controller
      */
     public function edit($id)
     {
-        //
+        Article::find($id);
+        return view('article.edit')->with('article',$article);
     }
 
     /**
@@ -68,7 +73,8 @@ class articleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Article::find($id)->update($request->all());
+        return redirect()->route("article.show",$id);
     }
 
     /**

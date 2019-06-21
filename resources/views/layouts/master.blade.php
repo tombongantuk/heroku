@@ -8,7 +8,8 @@
     <title>@yield('title')</title>
 
     <!--boostrap core CSS-->
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('summernote/summernote-bs4-min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -31,5 +32,13 @@
     </footer>
     <script src="{{ asset('js/jquery-3.2.1.slim.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('summernote/summernote-bs4.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+        $('#summernote').summernote({
+        tabsize: 2,
+        height: 200});
+        });
+    </script>
 </body>
 </html>

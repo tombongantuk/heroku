@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   
+    <meta name="_token" content="{{ csrf_token() }}"/>
     <title>@yield('title')</title>
 
     <!--boostrap core CSS-->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('summernote/summernote-bs4-min.css') }}" rel="stylesheet">
+    <link href="{{ asset('summernote/summernote-bs4.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -21,7 +21,10 @@
 
     <!--begin page content-->
     <main role="main" class="container">
-        @yield('content')
+        <div class="container"></div>
+        <br>
+        <br>
+        @yield('content')    
     </main>
 
     <!--footer-->
@@ -30,15 +33,9 @@
             @yield('text')
         </div>
     </footer>
-    <script src="{{ asset('js/jquery-3.2.1.slim.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
     <script src="{{ asset('summernote/summernote-bs4.min.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-        $('#summernote').summernote({
-        tabsize: 2,
-        height: 200});
-        });
-    </script>
 </body>
 </html>

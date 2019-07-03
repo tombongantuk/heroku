@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Input;
 class StaticsController extends Controller
 {
     public function Greetings(){
-    return view('master');
+    return view('layouts.master');
     }
 
     public function About(){
@@ -17,7 +17,7 @@ class StaticsController extends Controller
     }
 
     public function Home(){
-        return view('static.home');
+        return view('static.homes');
     }
 
     public function Contact(){
